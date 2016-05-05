@@ -37,7 +37,7 @@ match .list-item ns-view-content {
             @class += " list__link_active"
         }
 
-        "Subject: {mail.subject}"
+        "{mail.subject}"
     </a>
 }
 
@@ -48,7 +48,6 @@ match .content ns-view-add-class {
 match .mail ns-view-content {
     mail = model('mail')
 
-
     <h1>{mail.subject}</h1>
-    <p>{mail.body}</p>
+    html(mail.body)
 }
