@@ -1,0 +1,54 @@
+module "main"
+
+include "node_modules/noscript/yate/noscript.yate"
+
+match .app ns-view-add-class {
+    " app"
+}
+
+match .index ns-view-content {
+    "Select a mail"
+}
+
+match .list ns-view-collection {
+    apply /.views.ns-view-collection-container.* ns-view
+}
+
+match .list ns-view-add-class {
+    " list"
+}
+
+match .list-item ns-view-add-class {
+    " list__item"
+}
+
+match .list-item ns-view-content {
+
+    mail = model('mail')
+    listState = model('list-state')
+
+    if (!mail.isRead) {
+        @class += ' list__item_new'
+    }
+
+    <a class="list__link" href="/{mail.id}">
+
+        if listState.activeItemId == mail.id {
+            @class += " list__link_active"
+        }
+
+        "Subject: {mail.subject}"
+    </a>
+}
+
+match .content ns-view-add-class {
+    " content"
+}
+
+match .mail ns-view-content {
+    mail = model('mail')
+
+
+    <h1>{mail.subject}</h1>
+    <p>{mail.body}</p>
+}

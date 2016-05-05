@@ -1,0 +1,41 @@
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.app {
+    height: 100%;
+    display: flex;
+}
+
+.list {
+    padding: 10px 0;
+    width: 300px;
+    background: #f5f2f0;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.list__item_new {
+    font-weight: bold;
+}
+
+.list__link {
+    display: block;
+    padding: 5px 20px;
+    color: #22c;
+}
+
+.list__link_active {
+    background: #fff;
+    color: #000;
+}
+
+.list__link:hover {
+    color: #d00;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}

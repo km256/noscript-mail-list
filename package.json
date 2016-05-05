@@ -1,0 +1,19 @@
+{
+  "name": "noscript-mail-list",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/km256/noscript-mail-list.git"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "noscript": "^0.8.4"
+  },
+  "devDependencies": {
+    "yate": "0.0.80"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/yate templates.yate > static/templates.yate.js && node server.js"
+  }
+}
