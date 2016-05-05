@@ -19,10 +19,7 @@ ns.layout.define('index', {
 }, 'app');
 
 ns.layout.define('mail', {
-    'app content@': function (params) {
-        ns.Model.get('list-state').set('.activeItemId', params.id);
-        return 'mail';
-    }
+    'app content@': 'mail'
 }, 'app');
 
 
@@ -47,14 +44,18 @@ ns.Model.define('list-state', {
         activeItemId: null
     },
 
+    ctor: function () {
+        ns.events.on('ns-page-before-load', this.invalidate.bind(this));
+    },
+
     methods: {
-        canRequest: function() {
-            return false;
+        request: function () {
+            return Vow.promise(ns.page.current.params.id || null).then(function (activeItemId) {
+                this.setData({activeItemId: activeItemId})
+            }, this)
         }
     }
 });
-
-ns.Model.get('list-state').setData({});
 
 ns.Model.define('mails', {
     split: {

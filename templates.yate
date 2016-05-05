@@ -10,10 +10,6 @@ match .index ns-view-content {
     "Select a mail"
 }
 
-match .list ns-view-collection {
-    apply /.views.ns-view-collection-container.* ns-view
-}
-
 match .list ns-view-add-class {
     " list"
 }
