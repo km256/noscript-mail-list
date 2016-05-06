@@ -3,8 +3,7 @@ var app = express();
 var path = require('path');
 var mails = require('./mocks/mails');
 
-app.use('/static', express.static('static'));
-app.use('/node_modules', express.static('node_modules'));
+app.use('/dist', express.static('dist'));
 
 app.get('/api/mails', function (req, res) {
     res.json(mails.map(function (mail) {

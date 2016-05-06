@@ -11,9 +11,12 @@
     "noscript": "^0.8.4"
   },
   "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-yate": "^0.2.3",
     "yate": "0.0.80"
   },
   "scripts": {
-    "start": "./node_modules/.bin/yate templates.yate > static/templates.yate.js && node server.js"
+    "start": "grunt && node server.js"
   }
 }

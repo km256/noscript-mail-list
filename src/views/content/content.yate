@@ -1,0 +1,3 @@
+match .content ns-view-add-class {
+    " content"
+}

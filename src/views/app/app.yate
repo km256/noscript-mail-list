@@ -1,0 +1,3 @@
+match .app ns-view-add-class {
+    " app"
+}

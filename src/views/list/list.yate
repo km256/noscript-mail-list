@@ -1,0 +1,3 @@
+match .list ns-view-add-class {
+    " list"
+}

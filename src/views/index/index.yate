@@ -1,0 +1,3 @@
+match .index ns-view-content {
+    "Select a mail"
+}

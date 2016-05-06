@@ -1,0 +1,6 @@
+match .mail ns-view-content {
+    mail = model('mail')
+
+    <h1>{mail.subject}</h1>
+    html(mail.body)
+}
